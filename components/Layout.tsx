@@ -43,28 +43,28 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage }) => {
 
   const t = {
     [Language.EN]: {
-      home: 'Home', about: 'About', issues: 'Issues', intlLaw: 'Intl. Law', news: 'News', contact: 'Contact',
+      home: 'Home', about: 'About', work: 'Our Strategies', issues: 'Issues', intlLaw: 'Intl. Law', news: 'News', contact: 'Contact',
       title: 'Amal Center',
       footerDesc: 'Dedicated to promoting human rights, providing legal aid, and fostering a just society for all.',
       quickLinks: 'Quick Links', contactUs: 'Contact', rights: 'All rights reserved.',
       ourWork: 'Our Work', reports: 'Reports'
     },
     [Language.AR]: {
-      home: 'الرئيسية', about: 'من نحن', issues: 'قضايا', intlLaw: 'القانون الدولي', news: 'أخبار', contact: 'اتصل بنا',
+      home: 'الرئيسية', about: 'من نحن', work: 'استراتيجياتنا', issues: 'قضايا', intlLaw: 'القانون الدولي', news: 'أخبار', contact: 'اتصل بنا',
       title: 'مركز أمل',
       footerDesc: 'مكرسون لتعزيز حقوق الإنسان، وتوفير المساعدة القانونية، وتعزيز مجتمع عادل للجميع.',
       quickLinks: 'روابط سريعة', contactUs: 'اتصل بنا', rights: 'جميع الحقوق محفوظة.',
       ourWork: 'أعمالنا', reports: 'التقارير'
     },
     [Language.NL]: {
-      home: 'Startpagina', about: 'Over ons', issues: 'Kwesties', intlLaw: 'Int. Recht', news: 'Nieuws', contact: 'Contact',
+      home: 'Startpagina', about: 'Over ons', work: 'Onze Strategieën', issues: 'Kwesties', intlLaw: 'Int. Recht', news: 'Nieuws', contact: 'Contact',
       title: 'Amal Centrum',
       footerDesc: 'Toegewijd aan het bevorderen van mensenrechten, het bieden van juridische hulp en het bevorderen van een rechtvaardige samenleving voor iedereen.',
       quickLinks: 'Snelle Links', contactUs: 'Contact', rights: 'Alle rechten voorbehouden.',
       ourWork: 'Ons Werk', reports: 'Rapporten'
     },
     [Language.FR]: {
-      home: 'Accueil', about: 'À propos', issues: 'Dossiers', intlLaw: 'Droit Intl.', news: 'Actualités', contact: 'Contact',
+      home: 'Accueil', about: 'À propos', work: 'Nos Stratégies', issues: 'Dossiers', intlLaw: 'Droit Intl.', news: 'Actualités', contact: 'Contact',
       title: 'Centre Amal',
       footerDesc: 'Dédié à la promotion des droits de l\'homme, à l\'aide juridique et à la promotion d\'une société juste pour tous.',
       quickLinks: 'Liens Rapides', contactUs: 'Contact', rights: 'Tous droits réservés.',
@@ -77,6 +77,7 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage }) => {
   const navLinks = [
     { name: text.home, path: '/' },
     { name: text.about, path: '/about' },
+    { name: text.work, path: '/what-we-do' },
     { name: text.issues, path: '/issues' },
     { name: text.intlLaw, path: '/international-law' },
     { name: text.news, path: '/news' },
@@ -101,7 +102,7 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage }) => {
               <img 
                 src="logo.png" 
                 alt="Amal Center Logo" 
-                className="h-16 w-auto object-contain"
+                className="h-16 w-16 object-contain rounded-full bg-white/5 p-1"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
@@ -252,7 +253,8 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage }) => {
             <h3 className="text-white font-bold mb-4">{text.quickLinks}</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/about" className="hover:text-amal-gold transition-colors">{text.about}</Link></li>
-              <li><Link to="/issues" className="hover:text-amal-gold transition-colors">{text.ourWork}</Link></li>
+              <li><Link to="/what-we-do" className="hover:text-amal-gold transition-colors">{text.ourWork}</Link></li>
+              <li><Link to="/issues" className="hover:text-amal-gold transition-colors">{text.issues}</Link></li>
               <li><Link to="/international-law" className="hover:text-amal-gold transition-colors">{text.intlLaw}</Link></li>
               <li><Link to="/news" className="hover:text-amal-gold transition-colors">{text.reports}</Link></li>
             </ul>

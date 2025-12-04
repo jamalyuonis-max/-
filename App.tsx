@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -7,6 +8,7 @@ import Issues from './pages/Issues';
 import News from './pages/News';
 import Contact from './pages/Contact';
 import InternationalLaw from './pages/InternationalLaw';
+import WhatWeDo from './pages/WhatWeDo';
 import GeminiAssistant from './components/GeminiAssistant';
 import { Language } from './types';
 
@@ -19,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home language={language} />} />
           <Route path="/about" element={<About language={language} />} />
+          <Route path="/what-we-do" element={<WhatWeDo language={language} />} />
           <Route path="/issues" element={<Issues language={language} />} />
           <Route path="/international-law" element={<InternationalLaw language={language} />} />
           <Route path="/news" element={<News language={language} />} />

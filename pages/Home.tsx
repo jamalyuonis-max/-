@@ -152,7 +152,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
               <p className="text-slate-600 leading-relaxed mb-4">
                 {text.legalAidDesc}
               </p>
-              <Link to="/issues" className="inline-flex items-center gap-2 text-amal-gold font-medium hover:underline">
+              <Link to="/what-we-do" className="inline-flex items-center gap-2 text-amal-gold font-medium hover:underline">
                 {text.learnMore} 
                 <ArrowRight className={`h-4 w-4 ${isRtl ? 'rotate-180' : ''}`} />
               </Link>
@@ -169,7 +169,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
               <p className="text-slate-600 leading-relaxed mb-4">
                 {text.docDesc}
               </p>
-              <Link to="/issues" className="inline-flex items-center gap-2 text-amal-gold font-medium hover:underline">
+              <Link to="/what-we-do" className="inline-flex items-center gap-2 text-amal-gold font-medium hover:underline">
                 {text.learnMore} 
                 <ArrowRight className={`h-4 w-4 ${isRtl ? 'rotate-180' : ''}`} />
               </Link>
@@ -186,7 +186,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
               <p className="text-slate-600 leading-relaxed mb-4">
                 {text.advocacyDesc}
               </p>
-              <Link to="/issues" className="inline-flex items-center gap-2 text-amal-gold font-medium hover:underline">
+              <Link to="/what-we-do" className="inline-flex items-center gap-2 text-amal-gold font-medium hover:underline">
                 {text.learnMore} 
                 <ArrowRight className={`h-4 w-4 ${isRtl ? 'rotate-180' : ''}`} />
               </Link>
