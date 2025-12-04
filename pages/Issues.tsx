@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Scale, FileText, Megaphone, Users, Shield, Globe, ArrowUpRight, ChevronDown, ChevronUp, Activity, AlertCircle } from 'lucide-react';
+import { Scale, FileText, Megaphone, Users, Shield, Globe, ArrowUpRight, ChevronDown, ChevronUp, Activity, AlertCircle, Baby } from 'lucide-react';
 import { Language, Issue } from '../types';
 
 interface IssuesProps {
@@ -24,6 +24,14 @@ const Issues: React.FC<IssuesProps> = ({ language }) => {
             statValue: "١٥٠٠+",
             statLabel: "حالة موثقة",
             iconName: 'shield'
+          },
+          {
+            id: '7', title: "حماية الأطفال القصر",
+            description: "حماية الأطفال من الاستغلال، التجنيد القسري، والاحتجاز غير القانوني.",
+            longDescription: "الأطفال هم الفئة الأكثر ضعفاً في ظل النزاعات وعدم الاستقرار. نعمل على رصد وتوثيق انتهاكات حقوق الطفل، بما في ذلك عمالة الأطفال، والتجنيد في النزاعات المسلحة، واحتجاز القصر دون وصاية قانونية. نقدم الدعم النفسي والقانوني لضمان أولوية 'مصلحة الطفل الفضلى' في جميع الإجراءات القضائية، ونعمل على إعادة تأهيل الأطفال ضحايا العنف والانتهاكات الجسدية.",
+            statValue: "٨٥٠",
+            statLabel: "طفل تم دعمه",
+            iconName: 'baby'
           },
           {
             id: '2', title: "حرية التعبير",
@@ -77,6 +85,14 @@ const Issues: React.FC<IssuesProps> = ({ language }) => {
             iconName: 'shield'
           },
           {
+            id: '7', title: "Bescherming van Minderjarigen",
+            description: "Kinderen beschermen tegen misbruik, uitbuiting, gedwongen rekrutering en willekeurige detentie.",
+            longDescription: "Kinderen zijn de meest kwetsbare groep in conflicten. Wij documenteren gevallen van kinderarbeid, rekrutering in gewapende conflicten en detentie van minderjarigen zonder wettelijke voogdij. Wij bieden psychosociale en juridische steun om ervoor te zorgen dat het belang van het kind voorop staat in alle juridische procedures.",
+            statValue: "850",
+            statLabel: "Kinderen Gesteund",
+            iconName: 'baby'
+          },
+          {
             id: '2', title: "Vrijheid van Meningsuiting",
             description: "Verdediging van de rechten van journalisten, activisten en burgers om hun mening te uiten zonder angst voor vervolging.",
             longDescription: "Vrijheid van meningsuiting is de hoeksteen van elke democratie. We zien een toename in wetten die publicatie beperken en de vervolging van journalisten. Onze inspanningen omvatten juridische verdediging, campagnes tegen censuur en training in digitale veiligheid.",
@@ -126,6 +142,14 @@ const Issues: React.FC<IssuesProps> = ({ language }) => {
             statValue: "1500+",
             statLabel: "Cas Documentés",
             iconName: 'shield'
+          },
+          {
+            id: '7', title: "Protection des Mineurs",
+            description: "Protéger les enfants contre les abus, l'exploitation, le recrutement forcé et la détention arbitraire.",
+            longDescription: "Les enfants sont le groupe le plus vulnérable dans les conflits. Nous documentons les cas de travail des enfants, le recrutement dans les conflits armés et la détention de mineurs sans tuteur légal. Nous offrons un soutien psychosocial et juridique pour garantir que l'intérêt supérieur de l'enfant est prioritaire.",
+            statValue: "850",
+            statLabel: "Enfants Soutenus",
+            iconName: 'baby'
           },
           {
             id: '2', title: "Liberté d'Expression",
@@ -178,6 +202,14 @@ const Issues: React.FC<IssuesProps> = ({ language }) => {
             statValue: "1500+",
             statLabel: "Documented Cases",
             iconName: 'shield'
+          },
+          {
+            id: '7', title: "Protection of Minors",
+            description: "Safeguarding children from abuse, exploitation, forced recruitment, and arbitrary detention.",
+            longDescription: "Children are the most vulnerable group in conflict and instability. We document cases of child labor, recruitment in armed conflict, and juvenile detention without legal guardianship. We provide psychosocial support and legal aid to ensure the best interests of the child are prioritized in all legal proceedings.",
+            statValue: "850",
+            statLabel: "Children Rescued",
+            iconName: 'baby'
           },
           {
             id: '2', title: "Freedom of Expression",
@@ -260,6 +292,7 @@ const Issues: React.FC<IssuesProps> = ({ language }) => {
       case 'users': return <Users className="h-8 w-8" />;
       case 'globe': return <Globe className="h-8 w-8" />;
       case 'file-text': return <FileText className="h-8 w-8" />;
+      case 'baby': return <Baby className="h-8 w-8" />;
       default: return <Scale className="h-8 w-8" />;
     }
   };
@@ -271,7 +304,8 @@ const Issues: React.FC<IssuesProps> = ({ language }) => {
         'bg-red-50 text-red-600 dark:bg-red-900/30 dark:text-red-400',
         'bg-green-50 text-green-600 dark:bg-green-900/30 dark:text-green-400',
         'bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400',
-        'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400'
+        'bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400',
+        'bg-rose-50 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400'
     ];
     return colors[index % colors.length];
   };

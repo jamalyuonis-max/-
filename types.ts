@@ -30,7 +30,7 @@ export interface Issue {
   longDescription?: string;
   statValue?: string;
   statLabel?: string;
-  iconName: 'scale' | 'file-text' | 'megaphone' | 'users' | 'shield' | 'globe';
+  iconName: 'scale' | 'file-text' | 'megaphone' | 'users' | 'shield' | 'globe' | 'baby';
 }
 
 export interface ChatMessage {
