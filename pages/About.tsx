@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, Shield, Globe } from 'lucide-react';
 import { Language } from '../types';
@@ -58,9 +57,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
   const text = t[language];
 
   return (
-    <div className="pt-10 pb-20">
+    <div className="pt-10 pb-20 dark:bg-slate-950 transition-colors duration-300">
       {/* Header */}
-      <div className="bg-amal-blue text-white py-16 md:py-24">
+      <div className="bg-amal-blue dark:bg-slate-900 text-white py-16 md:py-24 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
             {text.title}
@@ -75,47 +74,47 @@ const About: React.FC<AboutProps> = ({ language }) => {
         {/* Mission & Vision */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">
           <div>
-            <h2 className="text-2xl font-serif font-bold text-amal-blue mb-4 flex items-center gap-3">
+            <h2 className="text-2xl font-serif font-bold text-amal-blue dark:text-white mb-4 flex items-center gap-3">
               <Shield className="text-amal-gold" />
               {text.mission}
             </h2>
-            <p className="text-slate-600 leading-relaxed text-lg">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
               {text.missionText}
             </p>
           </div>
           <div>
-            <h2 className="text-2xl font-serif font-bold text-amal-blue mb-4 flex items-center gap-3">
+            <h2 className="text-2xl font-serif font-bold text-amal-blue dark:text-white mb-4 flex items-center gap-3">
               <Globe className="text-amal-gold" />
               {text.vision}
             </h2>
-            <p className="text-slate-600 leading-relaxed text-lg">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
               {text.visionText}
             </p>
           </div>
         </div>
 
         {/* Team Section */}
-        <div className="border-t border-slate-200 pt-16">
-          <h2 className="text-3xl font-serif font-bold text-amal-blue text-center mb-12">
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-16">
+          <h2 className="text-3xl font-serif font-bold text-amal-blue dark:text-white text-center mb-12">
             {text.team}
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="text-center group">
-                <div className="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden border-4 border-slate-100 group-hover:border-amal-gold transition-colors">
+                <div className="relative mb-4 mx-auto w-48 h-48 rounded-full overflow-hidden border-4 border-slate-100 dark:border-slate-800 group-hover:border-amal-gold transition-colors">
                   <img 
                     src={`https://picsum.photos/300/300?random=${i + 10}`} 
                     alt="Team Member" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-bold text-amal-blue">
+                <h3 className="text-lg font-bold text-amal-blue dark:text-white">
                   {language === Language.EN ? `Team Member ${i}` : `عضو الفريق ${i}`}
                 </h3>
                 <p className="text-amal-gold text-sm font-medium mb-2">
                   {text.teamRole}
                 </p>
-                <p className="text-slate-500 text-sm">
+                <p className="text-slate-500 dark:text-slate-500 text-sm">
                   {text.teamDesc}
                 </p>
               </div>

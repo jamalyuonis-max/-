@@ -6,9 +6,10 @@
     <title>Amal Center for Human Rights</title>
     <link rel="icon" type="image/png" href="logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700;900&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
@@ -16,11 +17,27 @@
                 blue: '#0f172a', // Slate 900
                 gold: '#d97706', // Amber 600
                 light: '#f8fafc', // Slate 50
+                dark: '#020617', // Slate 950
               }
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               serif: ['Merriweather', 'serif'],
+              arabic: ['Cairo', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in': 'fadeIn 1s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
             }
           }
         }
@@ -29,9 +46,36 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Merriweather', serif;
+      }
+      /* Custom scrollbar for Webkit */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #475569;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      
+      .glass-nav {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
       }
     </style>
   <script type="importmap">
@@ -47,7 +91,7 @@
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-amal-gold selection:text-white transition-colors duration-300">
     <div id="root"></div>
   </body>
 </html>

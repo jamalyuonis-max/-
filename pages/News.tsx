@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Language, NewsItem } from '../types';
 
@@ -85,7 +84,7 @@ const News: React.FC<NewsProps> = ({ language }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-        <h1 className="text-3xl font-serif font-bold text-amal-blue mb-4 md:mb-0">
+        <h1 className="text-3xl font-serif font-bold text-amal-blue dark:text-white mb-4 md:mb-0">
           {text.title}
         </h1>
         
@@ -98,7 +97,7 @@ const News: React.FC<NewsProps> = ({ language }) => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === cat
                   ? 'bg-amal-blue text-white'
-                  : 'bg-white border border-slate-300 text-slate-600 hover:border-amal-gold hover:text-amal-gold'
+                  : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-amal-gold hover:text-amal-gold dark:hover:text-amal-gold'
               }`}
             >
               {cat}
@@ -109,7 +108,7 @@ const News: React.FC<NewsProps> = ({ language }) => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredNews.map((item) => (
-          <article key={item.id} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 group">
+          <article key={item.id} className="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-slate-100 dark:border-slate-800 group">
             <div className="relative overflow-hidden h-48">
                <img 
                  src={item.imageUrl} 
@@ -121,13 +120,13 @@ const News: React.FC<NewsProps> = ({ language }) => {
                </div>
             </div>
             <div className="p-6">
-              <div className="text-slate-400 text-xs mb-2 flex items-center gap-1">
+              <div className="text-slate-400 dark:text-slate-500 text-xs mb-2 flex items-center gap-1">
                  <span>{item.date}</span>
               </div>
-              <h2 className="text-lg font-bold text-amal-blue mb-3 hover:text-amber-600 transition-colors cursor-pointer">
+              <h2 className="text-lg font-bold text-amal-blue dark:text-white mb-3 hover:text-amber-600 dark:hover:text-amber-500 transition-colors cursor-pointer">
                 {item.title}
               </h2>
-              <p className="text-slate-600 text-sm mb-4 line-clamp-3">
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-3">
                 {item.excerpt}
               </p>
               <button className="text-amal-gold font-medium text-sm hover:underline flex items-center gap-1">

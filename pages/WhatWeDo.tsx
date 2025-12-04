@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Play, CheckCircle, ArrowRight, Scale, FileText, Megaphone, Users } from 'lucide-react';
 import { Language } from '../types';
@@ -226,15 +225,15 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ language }) => {
   const isRtl = language === Language.AR;
 
   return (
-    <div className="bg-slate-50 min-h-screen py-16">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-amal-blue mb-6">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-amal-blue dark:text-white mb-6">
             {text.title}
           </h1>
-          <p className="text-slate-600 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
             {text.subtitle}
           </p>
         </div>
@@ -290,30 +289,30 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ language }) => {
                 {/* Text Side */}
                 <div className="w-full lg:w-1/2">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-blue-50 rounded-xl text-amal-blue">
+                    <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-amal-blue dark:text-blue-400">
                       <program.icon className="h-8 w-8" />
                     </div>
-                    <h2 className="text-3xl font-serif font-bold text-amal-blue">
+                    <h2 className="text-3xl font-serif font-bold text-amal-blue dark:text-white">
                       {program.title}
                     </h2>
                   </div>
                   
-                  <p className="text-lg text-slate-700 font-medium mb-6 leading-relaxed">
+                  <p className="text-lg text-slate-700 dark:text-slate-300 font-medium mb-6 leading-relaxed">
                     {program.description}
                   </p>
                   
-                  <p className="text-slate-600 mb-8 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                     {program.details}
                   </p>
 
-                  <div className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm">
-                    <h3 className="font-bold text-amal-blue mb-4 flex items-center gap-2">
+                  <div className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+                    <h3 className="font-bold text-amal-blue dark:text-white mb-4 flex items-center gap-2">
                        <CheckCircle className="h-5 w-5 text-amal-gold" />
                        {text.impact}
                     </h3>
                     <ul className="space-y-3">
                       {program.goals.map((goal, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-700">
+                        <li key={idx} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
                            <span className="mt-1.5 w-1.5 h-1.5 bg-amal-gold rounded-full flex-shrink-0"></span>
                            {goal}
                         </li>
@@ -322,7 +321,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ language }) => {
                   </div>
 
                   <div className="mt-8">
-                     <Link to="/contact" className="inline-flex items-center gap-2 text-amal-gold font-bold hover:text-amber-600 transition-colors">
+                     <Link to="/contact" className="inline-flex items-center gap-2 text-amal-gold font-bold hover:text-amber-600 dark:hover:text-amber-500 transition-colors">
                         {text.getInvolved} <ArrowRight className={`h-5 w-5 ${isRtl ? 'rotate-180' : ''}`} />
                      </Link>
                   </div>

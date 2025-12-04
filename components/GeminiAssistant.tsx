@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Loader2, Sparkles, Scale } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
@@ -143,11 +142,11 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
       {/* Chat Window */}
       {isOpen && (
         <div 
-          className={`fixed bottom-6 z-50 w-full max-w-[350px] md:max-w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 animate-in slide-in-from-bottom-10 fade-in duration-300 ${isRtl ? 'left-6' : 'right-6'}`}
+          className={`fixed bottom-6 z-50 w-full max-w-[350px] md:max-w-[400px] h-[500px] bg-white dark:bg-slate-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 dark:border-slate-800 animate-in slide-in-from-bottom-10 fade-in duration-300 ${isRtl ? 'left-6' : 'right-6'}`}
           dir={isRtl ? 'rtl' : 'ltr'}
         >
           {/* Header */}
-          <div className="bg-amal-blue p-4 flex justify-between items-center text-white">
+          <div className="bg-amal-blue dark:bg-slate-800 p-4 flex justify-between items-center text-white">
             <div className="flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-amal-gold" />
               <h3 className="font-bold">{text.title}</h3>
@@ -161,10 +160,10 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
           </div>
 
           {/* Messages */}
-          <div className="flex-grow overflow-y-auto p-4 space-y-4 bg-slate-50">
+          <div className="flex-grow overflow-y-auto p-4 space-y-4 bg-slate-50 dark:bg-slate-950">
             {messages.length === 0 && (
-              <div className="text-center text-slate-500 mt-10">
-                <Scale className="h-12 w-12 mx-auto mb-2 text-slate-300" />
+              <div className="text-center text-slate-500 dark:text-slate-400 mt-10">
+                <Scale className="h-12 w-12 mx-auto mb-2 text-slate-300 dark:text-slate-600" />
                 <p className="text-sm">
                   {text.welcome}
                 </p>
@@ -179,7 +178,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
                   className={`max-w-[85%] rounded-2xl px-4 py-2 text-sm shadow-sm whitespace-pre-wrap ${
                     msg.role === 'user'
                       ? `bg-amal-blue text-white ${isRtl ? 'rounded-bl-none' : 'rounded-br-none'}`
-                      : `bg-white text-slate-800 border border-slate-200 ${isRtl ? 'rounded-br-none' : 'rounded-bl-none'}`
+                      : `bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-700 ${isRtl ? 'rounded-br-none' : 'rounded-bl-none'}`
                   }`}
                 >
                   {msg.text}
@@ -188,7 +187,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
             ))}
             {isLoading && (
                <div className="flex justify-start">
-                 <div className={`bg-white border border-slate-200 rounded-2xl px-4 py-3 shadow-sm ${isRtl ? 'rounded-br-none' : 'rounded-bl-none'}`}>
+                 <div className={`bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl px-4 py-3 shadow-sm ${isRtl ? 'rounded-br-none' : 'rounded-bl-none'}`}>
                    <Loader2 className="h-4 w-4 animate-spin text-amal-gold" />
                  </div>
                </div>
@@ -197,7 +196,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
           </div>
 
           {/* Input */}
-          <div className="p-4 bg-white border-t border-slate-100">
+          <div className="p-4 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -205,7 +204,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 placeholder={text.placeholder}
-                className="flex-grow px-4 py-2 border border-slate-300 rounded-full focus:outline-none focus:ring-2 focus:ring-amal-gold focus:border-transparent text-sm"
+                className="flex-grow px-4 py-2 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-full focus:outline-none focus:ring-2 focus:ring-amal-gold focus:border-transparent text-sm"
               />
               <button
                 onClick={handleSend}
@@ -216,7 +215,7 @@ const GeminiAssistant: React.FC<GeminiAssistantProps> = ({ language }) => {
               </button>
             </div>
             <div className="text-center mt-2">
-               <span className="text-[10px] text-slate-400">
+               <span className="text-[10px] text-slate-400 dark:text-slate-500">
                 {language === Language.AR ? 'مدعوم بواسطة Gemini 2.5 Flash' : 'Powered by Gemini 2.5 Flash'}
                </span>
             </div>

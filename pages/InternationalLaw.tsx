@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Book, Gavel, Globe, Scale, Shield, FileText, Scroll, ChevronDown, ChevronUp, UserCheck, Info } from 'lucide-react';
 import { Language } from '../types';
@@ -136,7 +135,6 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
             ],
             icon: Scale
           },
-          // ... (Simplified structure for brevity in EN/FR/NL, ensuring code structure works for all)
           {
              id: 'icescr',
              title: "Intl. Covenant on Economic & Social Rights",
@@ -177,9 +175,6 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
              icon: Gavel
           }
         ];
-        // Note: For NL and FR, we would implement similar structures. 
-        // For brevity in this response, defaulting complex detailed structure to EN logic for other languages 
-        // but normally would fully translate. The ARABIC is the requested priority.
        case Language.NL:
         return [
            {
@@ -355,17 +350,17 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
   const text = t[language];
 
   return (
-    <div className="bg-slate-50 min-h-screen py-16">
+    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen py-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-block p-4 bg-blue-100 rounded-full mb-6 text-amal-blue shadow-sm">
+          <div className="inline-block p-4 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-6 text-amal-blue dark:text-blue-400 shadow-sm">
             <Scroll className="h-10 w-10" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-amal-blue mb-6">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-amal-blue dark:text-white mb-6">
             {text.title}
           </h1>
-          <p className="text-slate-600 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
             {text.desc}
           </p>
         </div>
@@ -378,7 +373,7 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
             return (
               <div 
                 key={law.id} 
-                className={`bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 ${isExpanded ? 'ring-2 ring-amal-gold shadow-xl' : 'hover:shadow-md'}`}
+                className={`bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 transition-all duration-300 ${isExpanded ? 'ring-2 ring-amal-gold shadow-xl' : 'hover:shadow-md'}`}
               >
                 {/* Card Header (Always Visible) */}
                 <div 
@@ -386,8 +381,8 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
                   className="p-6 md:p-8 cursor-pointer flex flex-col md:flex-row gap-6 items-start md:items-center relative"
                 >
                   {/* Icon */}
-                  <div className={`flex-shrink-0 transition-colors duration-300 ${isExpanded ? 'text-amal-gold' : 'text-slate-400'}`}>
-                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${isExpanded ? 'bg-amber-50' : 'bg-slate-100'}`}>
+                  <div className={`flex-shrink-0 transition-colors duration-300 ${isExpanded ? 'text-amal-gold' : 'text-slate-400 dark:text-slate-500'}`}>
+                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${isExpanded ? 'bg-amber-50 dark:bg-amber-900/20' : 'bg-slate-100 dark:bg-slate-800'}`}>
                         <law.icon className="h-8 w-8" />
                      </div>
                   </div>
@@ -395,20 +390,20 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
                   {/* Main Info */}
                   <div className="flex-grow">
                     <div className="flex items-center gap-3 mb-2">
-                       <span className="text-xs font-bold px-2 py-1 bg-slate-100 text-slate-600 rounded-md">
+                       <span className="text-xs font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-md">
                          {law.year}
                        </span>
                     </div>
-                    <h2 className={`text-2xl font-serif font-bold mb-2 ${isExpanded ? 'text-amal-gold' : 'text-amal-blue'}`}>
+                    <h2 className={`text-2xl font-serif font-bold mb-2 ${isExpanded ? 'text-amal-gold' : 'text-amal-blue dark:text-white'}`}>
                       {law.title}
                     </h2>
-                    <p className="text-slate-600 text-lg">
+                    <p className="text-slate-600 dark:text-slate-400 text-lg">
                       {law.description}
                     </p>
                   </div>
 
                   {/* Arrow */}
-                  <div className="hidden md:block text-slate-400">
+                  <div className="hidden md:block text-slate-400 dark:text-slate-500">
                      {isExpanded ? <ChevronUp className="h-6 w-6" /> : <ChevronDown className="h-6 w-6" />}
                   </div>
                 </div>
@@ -416,42 +411,42 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
                 {/* Expanded Content */}
                 {isExpanded && (
                   <div className="px-6 md:px-8 pb-8 animate-in slide-in-from-top-4 duration-300">
-                    <div className="border-t border-slate-100 pt-6 mt-2 grid md:grid-cols-2 gap-8">
+                    <div className="border-t border-slate-100 dark:border-slate-800 pt-6 mt-2 grid md:grid-cols-2 gap-8">
                       
                       {/* Left Column: Context & Impact */}
                       <div className="space-y-6">
                         <div>
-                          <h4 className="flex items-center gap-2 font-bold text-amal-blue mb-3">
+                          <h4 className="flex items-center gap-2 font-bold text-amal-blue dark:text-white mb-3">
                              <Info className="h-5 w-5 text-amal-gold" />
                              {text.readDetails}
                           </h4>
-                          <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                          <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">
                             {law.extendedDescription}
                           </p>
                         </div>
                         
-                        <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
-                          <h4 className="flex items-center gap-2 font-bold text-amal-blue mb-3">
+                        <div className="bg-blue-50 dark:bg-blue-900/20 p-5 rounded-xl border border-blue-100 dark:border-blue-900/30">
+                          <h4 className="flex items-center gap-2 font-bold text-amal-blue dark:text-blue-300 mb-3">
                              <UserCheck className="h-5 w-5 text-amal-gold" />
                              {text.howProtects}
                           </h4>
-                          <p className="text-slate-700 leading-relaxed text-sm md:text-base italic">
+                          <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base italic">
                             "{law.citizenImpact}"
                           </p>
                         </div>
                       </div>
 
                       {/* Right Column: Key Articles */}
-                      <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 h-fit">
-                        <h4 className="flex items-center gap-2 font-bold text-amal-blue mb-4 uppercase tracking-wider text-sm">
+                      <div className="bg-slate-50 dark:bg-slate-800/50 p-6 rounded-xl border border-slate-100 dark:border-slate-700 h-fit">
+                        <h4 className="flex items-center gap-2 font-bold text-amal-blue dark:text-white mb-4 uppercase tracking-wider text-sm">
                            <FileText className="h-4 w-4 text-amal-gold" />
                            {text.keyArticles}
                         </h4>
                         <div className="space-y-4">
                           {law.articles.map((article, idx) => (
-                            <div key={idx} className="bg-white p-4 rounded-lg shadow-sm border border-slate-100">
+                            <div key={idx} className="bg-white dark:bg-slate-900 p-4 rounded-lg shadow-sm border border-slate-100 dark:border-slate-800">
                                <div className="text-xs font-bold text-amal-gold mb-1">{article.number}</div>
-                               <div className="text-slate-700 font-medium text-sm">
+                               <div className="text-slate-700 dark:text-slate-300 font-medium text-sm">
                                  {article.text}
                                </div>
                             </div>
@@ -463,7 +458,7 @@ const InternationalLaw: React.FC<InternationalLawProps> = ({ language }) => {
                     
                     <button 
                       onClick={() => toggleExpand(law.id)}
-                      className="w-full mt-8 py-2 flex items-center justify-center gap-2 text-slate-400 hover:text-amal-blue transition-colors text-sm font-medium border-t border-slate-50"
+                      className="w-full mt-8 py-2 flex items-center justify-center gap-2 text-slate-400 hover:text-amal-blue dark:hover:text-white transition-colors text-sm font-medium border-t border-slate-50 dark:border-slate-800"
                     >
                        <ChevronUp className="h-4 w-4" />
                        {text.hideDetails}
