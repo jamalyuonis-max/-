@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Heart, Shield, Users, Mail, PenTool, AlertTriangle } from 'lucide-react';
+import { ArrowRight, Globe, Heart, Shield, Users, Mail, PenTool, AlertTriangle, Quote } from 'lucide-react';
 import { Language } from '../types';
 
 interface HomeProps {
@@ -36,12 +36,10 @@ const Home: React.FC<HomeProps> = ({ language }) => {
         joinDesc: "Sign petitions, volunteer, donate and speak out against injustice.",
         joinBtn: "Get Involved"
       },
-      stance: {
-        title: "Where do you stand?",
-        text: "Discrimination. Hate. Genocide. Human rights are under heavy pressure worldwide. This seems to be becoming increasingly normal. But it is not.",
-        call: "This is the moment to choose where you stand. Do you look away or do you become a member?",
-        btn: "Become a Member",
-        sub: "With an annual contribution of $10 you are already a member."
+      wisdom: {
+        title: "Intellectual Independence",
+        text: "Do not allow anyone to brainwash you and plant hatred in you against someone who has not harmed you. Carrying grudges on behalf of others is a burden that does not belong to you, clouding your insight and the purity of your heart. Others' problems are not your problems, and their experiences do not bind you to judge from their perspective. Be pure in your judgment, free in your opinion, and fair in your feeling. The most dangerous type of manipulation is to hate without thinking and to distance yourself without experiencing. Let your own experience be the standard, not narratives charged with anger.",
+        author: "Amal Center Values"
       },
       newsletter: {
         title: "Stay Informed",
@@ -76,12 +74,10 @@ const Home: React.FC<HomeProps> = ({ language }) => {
         joinDesc: "وقع العرائض، تطوع، تبرع وتحدث ضد الظلم.",
         joinBtn: "شارك الآن"
       },
-      stance: {
-        title: "أين تقف أنت؟",
-        text: "التمييز. الكراهية. الإبادة الجماعية. حقوق الإنسان تتعرض لضغوط شديدة في جميع أنحاء العالم. يبدو أن هذا أصبح طبيعياً بشكل متزايد. لكنه ليس كذلك.",
-        call: "هذه هي اللحظة لاختيار مكانك. هل ستشيح بوجهك أم ستصبح عضواً؟",
-        btn: "كن عضواً",
-        sub: "بمساهمة سنوية قدرها ١٠ دولارات، تصبح عضواً."
+      wisdom: {
+        title: "الاستقلال الفكري",
+        text: "لا تسمح لاحد أن يغسل عقلك ويزرع فيك كراهية تجاه شخص لم يؤذك، أن تحمل ضغائن نيابةً عن غيرك هو حمل لا يخصك، وتشويش على بصيرتك وصفاء قلبك. مشاكل الاخرين ليست مشكلتك وتجاربهم لا تلزمك بأن تحكم من زاويتهم. كن نقياً في حكمك، حراً في رأيك، وعادلاً في شعورك، فأخطر أنواع التلاعب هو أن تكره دون أن تفكر وتبتعد دون أن تجرب. اجعل تجربتك أنت هي المعيار، لا روايات مشحونة بالغضب.",
+        author: "قيم مركز أمل"
       },
       newsletter: {
         title: "ابق على اطلاع",
@@ -116,12 +112,10 @@ const Home: React.FC<HomeProps> = ({ language }) => {
         joinDesc: "Teken petities, word vrijwilliger, doneer en spreek je uit tegen onrechtvaardigheid.",
         joinBtn: "Kom in actie"
       },
-      stance: {
-        title: "Waar sta jij?",
-        text: "Discriminatie. Haat. Genocide. Wereldwijd staan mensenrechten zwaar onder druk. Dat lijkt steeds normaler te worden. Maar dat is het niet.",
-        call: "Dit is het moment om te kiezen waar je staat. Kijk je weg of word je lid?",
-        btn: "Word lid",
-        sub: "Met een jaarlijkse bijdrage van € 10,- ben je al lid."
+      wisdom: {
+        title: "Intellectuele Onafhankelijkheid",
+        text: "Sta niemand toe je te hersenspoelen of haat in je te planten jegens iemand die je geen kwaad heeft gedaan. Wrok koesteren namens anderen is een last die niet de jouwe is; het vertroebelt je inzicht en de zuiverheid van je hart. Wees puur in je oordeel, vrij in je mening en rechtvaardig in je gevoel. Het gevaarlijkste type manipulatie is haten zonder na te denken. Laat je eigen ervaring de maatstaf zijn, niet verhalen vol woede.",
+        author: "Waarden van Amal Centrum"
       },
       newsletter: {
         title: "Blijf op de hoogte",
@@ -156,12 +150,10 @@ const Home: React.FC<HomeProps> = ({ language }) => {
         joinDesc: "Signez des pétitions, faites du bénévolat, donnez et dénoncez l'injustice.",
         joinBtn: "Participer"
       },
-      stance: {
-        title: "Où vous situez-vous ?",
-        text: "Discrimination. Haine. Génocide. Les droits de l'homme sont sous forte pression partout. Cela semble devenir normal. Mais ce n'est pas le cas.",
-        call: "C'est le moment de choisir. Allez-vous détourner le regard ou devenir membre ?",
-        btn: "Devenir membre",
-        sub: "Avec une contribution annuelle de 10 €, vous êtes déjà membre."
+      wisdom: {
+        title: "Indépendance Intellectuelle",
+        text: "Ne laissez personne vous laver le cerveau ou planter la haine en vous contre quelqu'un qui ne vous a pas fait de mal. Porter des rancunes au nom d'autrui est un fardeau qui ne vous appartient pas. Soyez pur dans votre jugement, libre dans votre opinion et juste dans votre sentiment. Le type de manipulation le plus dangereux est de haïr sans réfléchir. Que votre propre expérience soit la norme, et non des récits chargés de colère.",
+        author: "Valeurs du Centre Amal"
       },
       newsletter: {
         title: "Restez informé",
@@ -271,32 +263,31 @@ const Home: React.FC<HomeProps> = ({ language }) => {
          </div>
       </section>
 
-      {/* 5. "Where Do You Stand?" - High Impact Section */}
+      {/* 5. "Wisdom / Core Theme" - High Impact Section */}
       <section className="py-24 bg-amal-blue dark:bg-black text-white px-6 relative overflow-hidden">
-         <div className="absolute top-0 right-0 p-10 opacity-10">
-            <AlertTriangle className="h-64 w-64" />
+         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <Quote className="absolute top-10 left-10 w-48 h-48 text-white rotate-12" />
+            <Quote className="absolute bottom-10 right-10 w-64 h-64 text-white -rotate-12" />
          </div>
-         <div className="max-w-5xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-2/3">
-               <h2 className="text-4xl md:text-6xl font-black uppercase mb-6 leading-none tracking-tight">
-                  {text.stance.title}
-               </h2>
-               <p className="text-xl md:text-2xl font-medium mb-8 text-slate-300 leading-relaxed">
-                  {text.stance.text}
-               </p>
-               <p className="text-lg font-bold text-white mb-8 border-l-4 border-amal-gold pl-4">
-                  {text.stance.call}
-               </p>
-            </div>
-            <div className="md:w-1/3 bg-white/10 backdrop-blur-sm p-8 border border-white/20 text-center transform rotate-1 hover:rotate-0 transition-transform duration-300">
-               <Heart className="h-12 w-12 mx-auto text-amal-gold mb-4" />
-               <Link to="/contact" className="block w-full bg-amal-gold hover:bg-white hover:text-black text-black font-black uppercase py-4 text-lg mb-4 transition-colors">
-                  {text.stance.btn}
-               </Link>
-               <p className="text-sm text-slate-300">
-                  {text.stance.sub}
+         
+         <div className="max-w-5xl mx-auto relative z-10 text-center">
+            <h2 className="text-3xl md:text-5xl font-black uppercase mb-10 text-amal-gold tracking-widest">
+               {text.wisdom.title}
+            </h2>
+            
+            <div className="relative">
+               <p className="text-xl md:text-3xl font-serif font-medium leading-relaxed text-slate-100 italic">
+                  "{text.wisdom.text}"
                </p>
             </div>
+
+            <div className="mt-12 flex justify-center">
+               <div className="h-1 w-32 bg-amal-gold"></div>
+            </div>
+            
+            <p className="mt-6 text-sm font-bold uppercase tracking-widest text-slate-400">
+               {text.wisdom.author}
+            </p>
          </div>
       </section>
 
