@@ -113,7 +113,8 @@ const News: React.FC<NewsProps> = ({ language }) => {
                <img 
                  src={item.imageUrl} 
                  alt={item.title} 
-                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
+                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                 loading="lazy"
                />
                <div className={`absolute top-4 ${isRtl ? 'right-4' : 'left-4'} bg-amal-gold text-white text-xs font-bold px-3 py-1 rounded-full shadow-md`}>
                  {item.category}

@@ -106,6 +106,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
                     src={`https://picsum.photos/300/300?random=${i + 10}`} 
                     alt="Team Member" 
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-lg font-bold text-amal-blue dark:text-white">

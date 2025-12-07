@@ -271,6 +271,7 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({ language }) => {
                           src={program.image} 
                           alt={program.title} 
                           className="w-full aspect-video object-cover rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-slate-900/30 group-hover:bg-slate-900/40 transition-colors rounded-2xl flex items-center justify-center">
                            <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform shadow-lg">

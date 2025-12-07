@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, Heart, Shield, Users, Mail, PenTool, AlertTriangle, Quote } from 'lucide-react';
+import { ArrowRight, Globe, Heart, Shield, Users, Mail, PenTool, AlertTriangle, Quote, Scale } from 'lucide-react';
 import { Language } from '../types';
 
 interface HomeProps {
@@ -8,6 +8,8 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ language }) => {
+  const [logoError, setLogoError] = useState(false);
+
   const t = {
     [Language.EN]: {
       hero: {
@@ -175,6 +177,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
           src="https://picsum.photos/1920/1080?grayscale&blur=2" 
           alt="Protest" 
           className="absolute inset-0 w-full h-full object-cover opacity-50"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
         
@@ -201,7 +204,12 @@ const Home: React.FC<HomeProps> = ({ language }) => {
         <div className="max-w-7xl mx-auto px-6">
            <div className="bg-white dark:bg-slate-800 rounded-none shadow-xl overflow-hidden flex flex-col md:flex-row border-l-8 border-amal-gold">
               <div className="md:w-1/2 relative min-h-[300px]">
-                 <img src="https://picsum.photos/800/600?random=50" alt="Writing Letters" className="absolute inset-0 w-full h-full object-cover" />
+                 <img 
+                   src="https://picsum.photos/800/600?random=50" 
+                   alt="Writing Letters" 
+                   className="absolute inset-0 w-full h-full object-cover" 
+                   loading="lazy"
+                 />
                  <div className="absolute inset-0 bg-amal-gold/20 mix-blend-multiply"></div>
               </div>
               <div className="md:w-1/2 p-10 flex flex-col justify-center">
@@ -273,8 +281,17 @@ const Home: React.FC<HomeProps> = ({ language }) => {
          <div className="max-w-5xl mx-auto relative z-10 text-center">
             
             <div className="flex justify-center mb-8">
-               <div className="bg-white p-3 rounded-full shadow-2xl border-4 border-amal-gold/50 transform hover:scale-110 transition-transform duration-500">
-                  <img src="logo.png" alt="Logo" className="w-20 h-20 object-contain" />
+               <div className="bg-white p-3 rounded-full shadow-2xl border-4 border-amal-gold/50 transform hover:scale-110 transition-transform duration-500 w-32 h-32 flex items-center justify-center overflow-hidden">
+                  {logoError ? (
+                    <Scale className="h-16 w-16 text-amal-blue" />
+                  ) : (
+                    <img 
+                      src="/logo.png" 
+                      alt="Logo" 
+                      className="w-full h-full object-contain"
+                      onError={() => setLogoError(true)}
+                    />
+                  )}
                </div>
             </div>
 

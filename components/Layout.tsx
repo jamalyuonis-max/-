@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown, Check, Facebook, Twitter, Linkedin, Instagram, Heart, Sun, Moon, Youtube } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Check, Facebook, Twitter, Linkedin, Instagram, Heart, Sun, Moon, Youtube, Scale } from 'lucide-react';
 import { Language } from '../types';
 
 interface LayoutProps {
@@ -15,9 +15,15 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [imgError, setImgError] = useState(false);
   
   const langRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -286,13 +292,17 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
               {/* Logo Area */}
               <div className="flex-shrink-0 flex items-center group">
                 <Link to="/" className="flex items-center gap-4">
-                   <div className="bg-white p-2 rounded-full shadow-lg border-2 border-slate-100 dark:border-slate-800 group-hover:border-amal-gold transition-colors duration-300">
-                      <img 
-                          src="logo.png" 
-                          alt="Amal Center Logo" 
-                          className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
-                          onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      />
+                   <div className="bg-white p-1.5 rounded-full shadow-lg border-2 border-slate-100 dark:border-slate-800 group-hover:border-amal-gold transition-colors duration-300 flex items-center justify-center h-12 w-12 sm:h-14 sm:w-14 overflow-hidden">
+                      {imgError ? (
+                        <Scale className="h-8 w-8 text-amal-blue" />
+                      ) : (
+                        <img 
+                            src="/logo.png" 
+                            alt="Amal Center Logo" 
+                            className="h-full w-full object-contain"
+                            onError={() => setImgError(true)}
+                        />
+                      )}
                    </div>
                   <div className="flex flex-col justify-center">
                     <span className={`text-xl sm:text-2xl font-black tracking-tight text-white uppercase leading-none ${language === Language.AR ? 'font-arabic' : 'font-sans'} group-hover:text-amal-gold transition-colors duration-300`}>
@@ -364,7 +374,7 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
       </header>
 
       {/* Main Content Spacer (to account for fixed header) */}
-      <main className="flex-grow pt-[110px]">
+      <main className="flex-grow pt-[118px]">
         {children}
       </main>
 
@@ -411,8 +421,15 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Youtube className="h-5 w-5" /></a>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-5 flex gap-4 items-center border border-slate-700">
-                   <div className="bg-white p-2 rounded-full shrink-0">
-                      <img src="logo.png" alt="Logo" className="w-10 h-10 object-contain" />
+                   <div className="bg-white p-1.5 rounded-full shrink-0 h-12 w-12 flex items-center justify-center overflow-hidden">
+                      {imgError ? <Scale className="h-6 w-6 text-amal-blue" /> : (
+                        <img 
+                          src="/logo.png" 
+                          alt="Logo" 
+                          className="w-full h-full object-contain"
+                          onError={() => setImgError(true)}
+                        />
+                      )}
                    </div>
                    <div>
                      <h5 className="font-bold text-white mb-1 uppercase tracking-tight">{text.title}</h5>
