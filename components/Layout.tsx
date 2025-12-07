@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown, Check, Facebook, Twitter, Linkedin, Instagram, Heart, Sun, Moon } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, Check, Facebook, Twitter, Linkedin, Instagram, Heart, Sun, Moon, Youtube } from 'lucide-react';
 import { Language } from '../types';
 
 interface LayoutProps {
@@ -222,9 +222,11 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
                  <span className="opacity-75 tracking-wide uppercase">For Human Rights & Justice</span>
                  <div className="h-3 w-px bg-slate-700"></div>
                  <div className="flex gap-3">
-                    <a href="#" className="hover:text-white transition-colors"><Facebook className="h-3.5 w-3.5" /></a>
-                    <a href="#" className="hover:text-white transition-colors"><Twitter className="h-3.5 w-3.5" /></a>
-                    <a href="#" className="hover:text-white transition-colors"><Instagram className="h-3.5 w-3.5" /></a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Facebook className="h-3.5 w-3.5" /></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Twitter className="h-3.5 w-3.5" /></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Instagram className="h-3.5 w-3.5" /></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Linkedin className="h-3.5 w-3.5" /></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><Youtube className="h-3.5 w-3.5" /></a>
                  </div>
               </div>
 
@@ -282,21 +284,21 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
             <div className="flex justify-between items-center">
               
               {/* Logo Area */}
-              <div className="flex-shrink-0 flex items-center gap-3 group">
-                <Link to="/" className="flex items-center gap-3">
-                   <div className="bg-white p-1.5 rounded-full shadow-md">
+              <div className="flex-shrink-0 flex items-center group">
+                <Link to="/" className="flex items-center gap-4">
+                   <div className="bg-white p-2 rounded-full shadow-lg border-2 border-slate-100 dark:border-slate-800 group-hover:border-amal-gold transition-colors duration-300">
                       <img 
                           src="logo.png" 
                           alt="Amal Center Logo" 
-                          className="h-10 w-10 object-contain"
+                          className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                           onError={(e) => { e.currentTarget.style.display = 'none'; }}
                       />
                    </div>
-                  <div className="flex flex-col">
-                    <span className={`text-xl sm:text-2xl font-black tracking-tight text-white uppercase leading-none ${language === Language.AR ? 'font-arabic' : 'font-sans'}`}>
+                  <div className="flex flex-col justify-center">
+                    <span className={`text-xl sm:text-2xl font-black tracking-tight text-white uppercase leading-none ${language === Language.AR ? 'font-arabic' : 'font-sans'} group-hover:text-amal-gold transition-colors duration-300`}>
                       {text.title}
                     </span>
-                    <span className="text-[10px] text-slate-300 uppercase tracking-[0.2em] hidden sm:block">Human Rights</span>
+                    <span className="text-[10px] text-slate-300 uppercase tracking-[0.2em] hidden sm:block font-medium">Human Rights</span>
                   </div>
                 </Link>
               </div>
@@ -402,14 +404,20 @@ const Layout: React.FC<LayoutProps> = ({ children, language, setLanguage, theme,
              <div>
                 <h4 className="text-white font-bold uppercase tracking-wider mb-4 border-b border-slate-700 pb-2 inline-block">{text.footer.follow}</h4>
                 <div className="flex gap-4 mb-6">
-                   <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
-                   <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
-                   <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Instagram className="h-5 w-5" /></a>
-                   <a href="#" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
+                   <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Facebook className="h-5 w-5" /></a>
+                   <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Twitter className="h-5 w-5" /></a>
+                   <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Instagram className="h-5 w-5" /></a>
+                   <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></a>
+                   <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="bg-slate-800 p-2 rounded-full hover:bg-amal-gold hover:text-white transition-colors"><Youtube className="h-5 w-5" /></a>
                 </div>
-                <div className="bg-slate-800 rounded-lg p-4">
-                   <h5 className="font-bold text-white mb-1">{text.title}</h5>
-                   <p className="text-xs text-slate-400">{text.footer.desc}</p>
+                <div className="bg-slate-800 rounded-lg p-5 flex gap-4 items-center border border-slate-700">
+                   <div className="bg-white p-2 rounded-full shrink-0">
+                      <img src="logo.png" alt="Logo" className="w-10 h-10 object-contain" />
+                   </div>
+                   <div>
+                     <h5 className="font-bold text-white mb-1 uppercase tracking-tight">{text.title}</h5>
+                     <p className="text-xs text-slate-400 leading-snug">{text.footer.desc}</p>
+                   </div>
                 </div>
              </div>
           </div>

@@ -271,6 +271,13 @@ const Home: React.FC<HomeProps> = ({ language }) => {
          </div>
          
          <div className="max-w-5xl mx-auto relative z-10 text-center">
+            
+            <div className="flex justify-center mb-8">
+               <div className="bg-white p-3 rounded-full shadow-2xl border-4 border-amal-gold/50 transform hover:scale-110 transition-transform duration-500">
+                  <img src="logo.png" alt="Logo" className="w-20 h-20 object-contain" />
+               </div>
+            </div>
+
             <h2 className="text-3xl md:text-5xl font-black uppercase mb-10 text-amal-gold tracking-widest">
                {text.wisdom.title}
             </h2>
